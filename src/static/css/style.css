@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.dropArea{
+    border: 5px dashed #ddd;
+    height: 80vh;
+    width: 70vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dropArea.activate{
+    background-color: #b8d4fe;
+    color:#000000;
+    border: 2px dahsed #618ac9;
+}
+
+.dropArea h2{
+    font-size: 25px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.dropArea span{
+    font-size: 25px;
+    color: #000000;
+}
+
+.botonArchivos{
+    color: #ffffff !important;
+    padding: 10px 25px;
+    font-size: 20px !important;
+    border: 0;
+    outline: none;
+    background-color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.file-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 70vh;
+    border: solid 1px #ddd;
+}
+
+#preview{
+    margin-top: 10px;
+}
+
+.status-text{
+    padding: 0 10px;
+}
+
+.success{
+    color: #52ad5a;
+}
+
+.failure{
+    color: #b82217;
+}
+
+.Cerrar{
+    all: unset;
+    color: #5256ad;
+}
+.iconoX{
+    cursor: pointer;
+}
+.iconoX:hover{
+    color: #361f6d;
+    font-size: 15px;
+}
+.imgFile{
+    width: 50px;
+}
+.name-img{
+    margin-right: 3.5rem;
+    font-size: 15px;
+}
