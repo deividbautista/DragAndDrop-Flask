@@ -7,18 +7,20 @@
 // link-video: https://youtu.be/qWFwYLUGWrc
 // link-repositorios: https://github.com/marcosrivasr/Curso-de-NodeJS 
 
+//---------------------------------------
 let archivosSeleccionados = [];
 const button = document.querySelector(".botonArchivos");
 const inp = document.querySelector("#fileInput");
 const dropArea = document.querySelector(".dropArea");
 const dragText = dropArea.querySelector("h2");
 
-
+//---------------------------------------
 button.addEventListener('click', e => {
     inp.click();
     console.log("wenas")
 });
 
+//---------------------------------------
 inp.addEventListener("change", (event) => {
     event.preventDefault();
     archivosSeleccionados.push(...inp.files);
@@ -49,7 +51,6 @@ dropArea.addEventListener("drop", (e) => {
 });
 
 //---------------------------------------------------------------------------------
-
 function cerrar() {
     const closeButtons = document.querySelectorAll('.Cerrar');
     closeButtons.forEach(button => {
@@ -68,19 +69,8 @@ function cerrar() {
         });
     });
 }
+
 //---------------------------------------
-
-// function dragOverHandler(event) {
-//     event.preventDefault();
-//   }
-
-// function dropHandler(event) {
-//   event.preventDefault();
-//   archivosSeleccionados.push(...event.dataTransfer.files);
-//   mostrarArchivos();
-// }
-
-
 function mostrarArchivos() {
     const archivosDiv = document.getElementById('archivosSeleccionados');
     archivosDiv.innerHTML = archivosSeleccionados.map(archivo => {
@@ -105,6 +95,7 @@ function mostrarArchivos() {
     }).join('');
 }
 
+//---------------------------------------
 function uploadFiles() {
     const formData = new FormData();
     archivosSeleccionados.forEach(archivo => {

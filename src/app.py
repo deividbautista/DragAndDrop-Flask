@@ -20,7 +20,7 @@ def stringAleatorio():
 
 def extensiones_validas(filename):
     # Lista de extensiones permitidas para los archivos de imagen
-    extensiones_permitidas = {'png', 'jpg', 'jpeg', 'gif'}
+    extensiones_permitidas = {'png', 'jpg', 'jpeg', 'gif', 'svga', 'webp'}
 
     # Obtener la extensión del archivo
     extension = filename.rsplit('.', 1)[1].lower()
