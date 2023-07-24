@@ -3,7 +3,6 @@ In this repository the development of the drag and drop module will be observed,
 
 ## Requisitos previos
 * Python [python download](https://www.python.org/downloads/release/python-31010/)
-* pip [pip download](https://pip.pypa.io/en/stable/installation/)
 ---
 
 ```sh
@@ -12,7 +11,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 ```sh
 # Crear entorno virtual
-virtualenv -p python3 env   
+virtualenv env   
 ```
 ```sh
 # Activar entorno virtual para instalar dependencias
