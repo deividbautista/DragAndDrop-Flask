@@ -17,7 +17,6 @@ const dragText = dropArea.querySelector("h2");
 //---------------------------------------
 button.addEventListener('click', e => {
     inp.click();
-    console.log("wenas")
 });
 
 //---------------------------------------
@@ -58,13 +57,12 @@ function cerrar() {
             const fileContainer = button.closest('.file-container');
             const span = fileContainer.querySelector('.name-img');
             const nombreElemento = span.textContent;
-            
+
             const index = archivosSeleccionados.findIndex(elemento => elemento.name === nombreElemento);
             if (index !== -1) {
-            archivosSeleccionados.splice(index, 1);
-            fileContainer.remove();
+                archivosSeleccionados.splice(index, 1);
+                fileContainer.remove();
             }
-            console.log("Qué onda?")
             console.log(archivosSeleccionados);
         });
     });
@@ -84,6 +82,8 @@ function mostrarArchivos() {
                     <img class="imgFile" src="${fileUrl}" alt="${archivo.name}">
                     <div class="status">
                         <span id="${id}" class="name-img">${archivo.name}</span>
+                    </div>
+                    <div class="divcerrar">
                         <button class="Cerrar"><i class="iconoX fa-solid fa-xmark"></i></button>
                     </div>
                 </div>
@@ -101,7 +101,6 @@ function uploadFiles() {
     archivosSeleccionados.forEach(archivo => {
         formData.append('archivos', archivo);
     });
-
     fetch('/upload', {
         method: 'POST',
         body: formData

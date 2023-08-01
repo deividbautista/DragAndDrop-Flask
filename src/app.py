@@ -31,9 +31,9 @@ def extensiones_validas(filename):
     else:
         return False
 
-
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['POST', 'GET'])
 def upload_files():
+    
     # Obtener la lista de archivos enviados en la solicitud
     archivos = request.files.getlist('archivos')
 
@@ -52,13 +52,9 @@ def upload_files():
                 archivo.filename = stringAleatorio() + extension
                 archivo.save(os.path.join(directorio_destino, archivo.filename))
             else:
-                print (len(archivos))
-                return 'archivo no valido'
-        print (len(archivos))
-        return redirect(url_for('home'))  
-
+                return "Archivo invalido"    
 
 if __name__ == '__main__':
-    app.run(debug=True, port=9000)
+    app.run(debug=True, port=7000)
 
 
