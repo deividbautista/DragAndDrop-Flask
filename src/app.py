@@ -1,13 +1,30 @@
+#------------------------------------------------------------------------------------
+# El presente código posee la finalidad de aprender y practicar conocimientos intermedios 
+# del lenguaje de programación python y javascripts, cabe aclarar que estractos de código 
+# y sobre todo diseño principal se sustrajeron de un tutorial el cual se reflejara su link a continuación.
+#------------------------------------------------------------------------------------
+
+# Código sustraido del canal: Vida MRR - Programacion web "https://www.youtube.com/@vidamrr" 
+# link-video: https://youtu.be/qWFwYLUGWrc
+# link-repositorios: https://github.com/marcosrivasr/Curso-de-NodeJS  
+
+# En este apartado se realiza la importación de las librerias y modulos a utilizar en este proyecto.
 from flask import Flask, render_template, request, redirect, url_for
 from random import sample
 import os
 
 app = Flask(__name__)
 
+#------------------------------------------------------------------------------------
+# En el siguiente apartados se observaran las distintas rutas con las que se trabajara
+# en el servidor de flask incluyendo tambien las funciones dentro de estas.
+#------------------------------------------------------------------------------------
+# Ruta principal que contendra el diseño de drag and drop principal.
 @app.route("/")
 def home():
     return render_template('index.html')
 
+# Definimos la funcion "stringAleatorio" el cual nos retornara un valor aleatorio con los parametros especificados.
 def stringAleatorio():
      #Generando string aleatorio
     string_aleatorio = "0123456789abcdefghijklmnopqrstuvwxyz_"
@@ -52,6 +69,7 @@ def upload_files():
                 archivo.filename = stringAleatorio() + extension
                 archivo.save(os.path.join(directorio_destino, archivo.filename))
             else:
+                print("Archivo invalido")
                 return "Archivo invalido"    
 
 if __name__ == '__main__':
